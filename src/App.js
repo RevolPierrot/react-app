@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Wetter from "./components/Wetter";
 import Default from "./components/Default";
 import Slideshow from "./components/Slideshow";
+import Hello from "./components/Hello";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +25,7 @@ function App() {
               <li><Link to="/">Home</Link></li>
               <li><Link to="/wetter">Wetter</Link></li>
               <li><Link to="/slideshow">Slideshow</Link></li>
+              <li><Link to="/hello">Hello</Link></li>
             </ul>
           </nav>
           <Switch>
@@ -37,7 +39,10 @@ function App() {
               <Slideshow/>
             </Route>
             <Route path="/default">
-              <Default message="Diese Route existiert nicht" />
+              <Default message="" />
+            </Route>
+            <Route path="/hello">
+              <Hello title="Moin moin" />
             </Route>
             <Redirect to="/default" />
           </Switch>

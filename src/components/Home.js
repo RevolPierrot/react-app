@@ -1,5 +1,6 @@
 import {React, Component} from 'react';
 import Clock from "./Clock";
+import Default from "./Default";
 
 class Home extends Component {
 
@@ -14,6 +15,20 @@ class Home extends Component {
         console.info(e)
     }
 
+    constructor() {
+        super();
+        this.meinAlertFenster('Guten Morgen!')
+    }
+
+    /*
+    Projectday4: 1. Schaut Euch bitte die Dokumentation zur ES6 (EcmaScript 2015) an:
+    https://www.w3schools.com/react/react_es6.asp (hier insbesondere Thema „Arrow-Functions“)
+    2. Schreibt bitte in der Home Komponente folgende Funktion:
+    */
+    meinAlertFenster = (meldung) => {
+        alert(meldung);
+    }
+
     render() {
         return (
             <div className="container">
@@ -25,6 +40,7 @@ class Home extends Component {
                 {/*hier in der h3 ausgabe des textes der in input eingegeben wird*/}
                 <h3>Hier state Ausgabe: {this.state.txt}</h3>
                 <input type="text" onChange={this.changeText}/>
+                <Default message="Jetzt biste auf der Homepage."/>
             </div>
         );
     }
